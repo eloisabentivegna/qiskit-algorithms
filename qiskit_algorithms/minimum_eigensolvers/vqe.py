@@ -333,7 +333,7 @@ class VQE(VariationalAlgorithm, MinimumEigensolver):
                 values = values.reshape(1)
 
             if self.callback is not None:
-                for params, value in zip(parameters.reshape(-1, 1), values):
+                for params, value in zip(parameters, values):
                     eval_count += 1
                     self.callback(eval_count, params, value, estimator_result.metadata)
 
